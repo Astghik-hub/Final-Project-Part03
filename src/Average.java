@@ -13,11 +13,9 @@ public class Average {
 
     /**
      * Constructor
-     *
-     * @param
      */
     public Average() {
-
+        data = new int[5];
         for (int i = 0; i < data.length; i++) {
             System.out.printf("Enter score number %d: ", i + 1);
             data[i] = nums.nextInt();
@@ -28,14 +26,17 @@ public class Average {
 
     public void calculateMean() {
         int total = 0;
-        for (int i = 0; i < data.length; i++) {
-            total += data[i];
+        for (int val : data) {
+            total += val;
         }
         mean = (double) total / data.length;
     }
 
     public String toString() {
-        return String.format("HELP");
+        for (int val : data) {
+            System.out.print(val + " ");
+        }
+        return String.format("%f", mean);
     }
 
     public void selectionSort() {

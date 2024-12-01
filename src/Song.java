@@ -25,6 +25,6 @@ public class Song {
      * of the song and the artist.
      */
     public String toString() {
-        return title + " by " + artist + "\n";
+        return title + " by " + artist;
     }
 }
