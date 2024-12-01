@@ -1,13 +1,15 @@
+import java.io.IOException;
 import java.util.Scanner;
-import java.io.*;
+import java.io.File;
 
 /**
  * This program creates a list of songs for a CD
  * by reading from a file.
  */
 public class CompactDisc {
+
     public static void main(String[] args) throws IOException {
-        Scanner input = new Scanner(new File("Classics.txt"));
+        Scanner input = new Scanner(new File("src/Classics.txt"));
         String title;
         String artist;
         Song[] cd = new Song[6];
@@ -16,11 +18,11 @@ public class CompactDisc {
             artist = input.nextLine();
             cd[i] = new Song(title, artist);
         }
+        input.close();
         System.out.println("Contents of Classics:");
-        for (int i = 0; i < cd.length; i++) {
-// ADD LINES FOR TASK #3 HERE
-// Print the contents of the array to the console
-            System.out.println(cd[i] + "\n");
+        for (Song song : cd) {
+            System.out.println(song);
         }
     }
 }
+
