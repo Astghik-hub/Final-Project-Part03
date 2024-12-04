@@ -7,7 +7,6 @@ import java.io.File;
  * by reading from a file.
  */
 public class CompactDisc {
-
     public static void main(String[] args) throws IOException {
         Scanner input = new Scanner(new File("src/Classics.txt"));
         String title;
